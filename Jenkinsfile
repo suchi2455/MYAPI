@@ -1,11 +1,11 @@
 node("master"){
 stage("clone"){
     echo " hello suchi"
-    git  credentialsId: 'SuchiGit', url: 'https://github.com/suchi2455/petStoreAPI.git', branch: "${env.BRANCH_NAME}"
+    git  credentialsId: 'SuchiGit', url: 'https://github.com/suchi2455/MYAPI.git', branch: "${env.BRANCH_NAME}"
 }
 
 stage("deploy to dev"){
-    sh "apictl import-api -f ./PETSTORE_API -e dev -k --preserve-provider --update --verbose"
+    sh "apictl import-api -f ./MYAPI -e dev -k --preserve-provider --update --verbose"
 }
 
 
