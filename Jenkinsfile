@@ -5,7 +5,7 @@ stage("clone"){
 }
 
 stage("deploy to dev"){
-    sh "apictl import-api -f ./MYAPI -e dev -k --preserve-provider --update --verbose"
+    bat "apictl import-api -f ./MYAPI -e dev -k --preserve-provider --update --verbose"
 }
 
 
