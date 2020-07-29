@@ -1,7 +1,7 @@
 node("master"){
 stage("clone"){
     echo " hello suchi"
-    git  credentialsId: 'gitHubCredential', url: 'https://github.com/suchi2455/petStoreAPI.git', branch: "${env.BRANCH_NAME}"
+    git  credentialsId: 'SuchiGit', url: 'https://github.com/suchi2455/petStoreAPI.git', branch: "${env.BRANCH_NAME}"
 }
 
 stage("deploy to dev"){
