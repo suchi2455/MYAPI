@@ -1,0 +1,14 @@
+id:
+  providerName: admin
+  apiName: Swagger Petstore
+  version: 1.0.0
+type: HTTP
+context: /v1/1.0.0
+contextTemplate: /v1/{version}
+availableTiers:
+- name: Unlimited
+status: CREATED
+visibility: public
+transports: http,https
+productionUrl: http://localhost:8080
+sandboxUrl: http://localhost:8081
