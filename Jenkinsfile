@@ -29,12 +29,14 @@ node("master") {
         if(!isDirPresent){
             echo "INIT API"
             bat("apictl init ${folderName} -f -d  defaultTemplate.yml --oas swagger.yml")
+            withGit{
             echo "git Add ${folderName} to commit and push "
             bat "git add ${folderName}"
             echo "git commit ${folderName} to push "
             bat "git commit -m 'wso2 apictl init commit '"            
             echo "Push changed to repo ${env.BRANCH_NAME}"
             bat "git push origin ${env.BRANCH_NAME}"
+            }
         }
         else{
             echo "${folderName} already present"
