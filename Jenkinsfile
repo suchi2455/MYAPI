@@ -29,6 +29,10 @@ node("master") {
         if(!isDirPresent){
             bat("apictl init ${folderName} -f -d  defaultTemplate.yml --oas swagger.yml")
         }
+        else{
+            echo "${folderName} already present"
+            bat "tree ${folderName}"
+        }
 
     }
     stage("deploy to dev") {
