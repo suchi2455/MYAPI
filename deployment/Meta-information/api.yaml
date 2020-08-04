@@ -7,7 +7,7 @@ context: /v1/1.0.0
 contextTemplate: /v1/{version}
 availableTiers:
 - name: Unlimited
-status: CREATED
+status: PUBLISHED
 visibility: public
 transports: http,https
 productionUrl: http://localhost:8080
