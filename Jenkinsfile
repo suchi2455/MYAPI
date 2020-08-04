@@ -44,7 +44,13 @@ node("master") {
         }
 
     }
+    
+    
     stage("deploy to dev") {
+        echo 'Logging into $DEV_ENV'
+                withCredentials([usernamePassword(credentialsId: 'dev_login', usernameVariable: 'DEV_USERNAME', passwordVariable: 'DEV_PASSWORD')]) {
+                    bat 'apictl login dev -u $DEV_USERNAME -p $DEV_PASSWORD -k'                        
+                }
         bat "apictl import-api -f ./ -e dev -k --preserve-provider --update --verbose"
     }
 
